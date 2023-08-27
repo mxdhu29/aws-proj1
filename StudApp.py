@@ -54,9 +54,9 @@ def Addstu():
         
         cursor.execute(insert_sql,(stu_id, first_name, last_name, degree, cgpa))
         db_conn.commit()
-        stud_name = "" + first_name + " " + last_name
+        stu_name = "" + first_name + " " + last_name
         # Uplaod image file in S3 #
-        stu_image_file_name_in_s3 = "stu_id-"+str(stu_id) + "_image_file"
+        stu_image_file_name_in_s3 = "stu-id-"+str(stu_id) + "_image_file"
         s3 = boto3.resource('s3')
 
         
