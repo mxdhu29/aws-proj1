@@ -26,7 +26,7 @@ db_conn = connections.Connection(
     
 )
 output = {}
-table = 'student';
+table = 'students';
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
@@ -35,7 +35,7 @@ def home():
 @app.route("/about", methods=['POST'])
 def about():
     return render_template('www.intellipaat.com');
-@app.route("/addemp", methods=['POST'])
+@app.route("/addstu", methods=['POST'])
 def Addstu():
     stu_id = request.form['emp_id']
     first_name = request.form['first_name']
@@ -44,7 +44,7 @@ def Addstu():
     cgpa = request.form['location']
     stu_image_file = request.files['stu_image_file']
   
-    insert_sql = "INSERT INTO employee VALUES (%s, %s, %s, %s, %s)"
+    insert_sql = "INSERT INTO students VALUES (%s, %s, %s, %s, %s)"
     cursor = db_conn.cursor()
 
     if stu_image_file.filename == "":
@@ -118,7 +118,7 @@ def FetchData():
     stu_id = request.form['stu_id']
 
     output = {}
-    select_sql = "SELECT stu_id, first_name, last_name, degree, cgpa from student where stu_id=%s"
+    select_sql = "SELECT stu_id, first_name, last_name, degree, cgpa from students where stu_id=%s"
     cursor = db_conn.cursor()
 
     try:
