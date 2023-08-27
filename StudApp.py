@@ -41,7 +41,7 @@ def Addstu():
     first_name = request.form['first_name']
     last_name = request.form['last_name']
     degree = request.form['degree']
-    cgpa = request.form['location']
+    cgpa = request.form['cgpa']
     stu_image_file = request.files['stu_image_file']
   
     insert_sql = "INSERT INTO students VALUES (%s, %s, %s, %s, %s)"
