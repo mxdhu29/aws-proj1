@@ -37,7 +37,7 @@ def about():
     return render_template('www.intellipaat.com');
 @app.route("/addstu", methods=['POST'])
 def Addstu():
-    stu_id = request.form['emp_id']
+    stu_id = request.form['stu_id']
     first_name = request.form['first_name']
     last_name = request.form['last_name']
     degree = request.form['degree']
